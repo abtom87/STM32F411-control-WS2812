@@ -28,7 +28,7 @@ void init_timer(void) {
      RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 
      TIM_TimeBaseInitTypeDef TimInitStruct;
-     TIM_OCInitTypeDef Tim2OCInitStr;
+     TIM_OCInitTypeDef       Tim2OCInitStr;
 
      /*Output Freq = Fclock/ ( (ARR+1)*(Prescaler+1)*(RCR+1) )*/
 

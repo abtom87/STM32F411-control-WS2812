@@ -20,9 +20,10 @@ void USART_TX_string(const char *str_to_transmit) {
 
      for (i = 0; i < (strlen(str_to_transmit)); i++) USART_TX_byte(str_to_transmit[i]);
 }
+
 /* Configure USART2(PD5 Tx, PD6 Rx) to redirect printf data to host PC. */
 void init_USART2(void) {
-     GPIO_InitTypeDef GPIO_InitStruct;
+     GPIO_InitTypeDef  GPIO_InitStruct;
      USART_InitTypeDef USART_InitStruct;
 
      RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);

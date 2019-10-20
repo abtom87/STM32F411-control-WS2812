@@ -15,7 +15,7 @@
 #include "usart2_comm.h"
 
 volatile unsigned long msTicks = 0;
-void Delay_ms(unsigned long del_count) {
+void                   Delay_ms(unsigned long del_count) {
      del_count *= 1000;
      msTicks = del_count;
      while (msTicks != 0)
@@ -45,7 +45,8 @@ int main(void) {
      init_dma_timer();
      enable_dma_timer_irq();
 
-     /*Initialise timer and the PIN where Output waveform will be measured*/
+     /*Initialise timer and the PIN where Output waveform will be
+      * measured*/
      init_timer();
      enable_alt_func_gpio();
 
@@ -56,20 +57,22 @@ int main(void) {
 void SysTick_Handler() {}
 
 volatile uint32_t dutycycle_buffer[BUFF_SIZE];
-void DMA1_Stream7_IRQHandler(void) {
+void              DMA1_Stream7_IRQHandler(void) {
      // GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
      if (DMA_GetITStatus(DMA1_Stream7, DMA_IT_TCIF7) != RESET) {
           GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-          dutycycle_buffer[0] = 10;
-          dutycycle_buffer[1] = 20;
-          dutycycle_buffer[2] = 30;
-          dutycycle_buffer[3] = 40;
-          dutycycle_buffer[4] = 50;
-          dutycycle_buffer[5] = 60;
-          dutycycle_buffer[6] = 70;
-          dutycycle_buffer[7] = 80;
-          dutycycle_buffer[8] = 90;
-          dutycycle_buffer[9] = 100;
+          dutycycle_buffer[0]  = 10;
+          dutycycle_buffer[1]  = 20;
+          dutycycle_buffer[2]  = 30;
+          dutycycle_buffer[3]  = 40;
+          dutycycle_buffer[4]  = 50;
+          dutycycle_buffer[5]  = 60;
+          dutycycle_buffer[6]  = 70;
+          dutycycle_buffer[7]  = 80;
+          dutycycle_buffer[8]  = 90;
+          dutycycle_buffer[9]  = 100;
+          dutycycle_buffer[10] = 90;
+          dutycycle_buffer[11] = 80;
           DMA_ClearITPendingBit(DMA1_Stream7, DMA_IT_TCIF7);
      }
 }

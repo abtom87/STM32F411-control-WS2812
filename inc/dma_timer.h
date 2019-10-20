@@ -13,7 +13,7 @@
 void init_dma_timer(void);
 void enable_dma_timer_irq(void);
 
-#define BUFF_SIZE 10U
+#define BUFF_SIZE 12U
 extern volatile uint32_t dutycycle_buffer[BUFF_SIZE];
 
 #endif /* DMA_TIMER_H_ */
