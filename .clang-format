@@ -1,0 +1,10 @@
+﻿---
+BasedOnStyle: Google
+Language: Cpp
+AccessModifierOffset: 8
+AlignAfterOpenBracket: Align
+IndentWidth: 5
+AlignConsecutiveAssignments: 'true'
+AlignConsecutiveDeclarations: 'true'
+ColumnLimit: 150
+...
